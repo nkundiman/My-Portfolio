@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-white via-green-50 to-gray-100 flex items-center"
+      className="min-h-screen bg-gradient-to-br from-white via-green-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black flex items-center transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 py-20">
 
@@ -23,17 +23,17 @@ export default function Hero() {
               Hello, I'm
             </p>
 
-            <h1 className="text-6xl font-extrabold mt-4 leading-tight">
+            <h1 className="text-6xl font-extrabold mt-4 leading-tight text-gray-900 dark:text-white">
               NKUNDIMANA
               <br />
               AUGUSTIN
             </h1>
 
-            <h2 className="text-2xl text-gray-600 mt-6">
+            <h2 className="text-2xl mt-6 text-gray-600 dark:text-gray-300">
               Agricultural Engineer • AI Researcher • Founder of AGRIC AI
             </h2>
 
-            <p className="text-gray-600 text-lg mt-8 leading-8 max-w-xl">
+            <p className="text-lg mt-8 leading-8 max-w-xl text-gray-600 dark:text-gray-400">
               Building intelligent technologies that empower African farmers
               through Artificial Intelligence, Digital Agriculture,
               Renewable Energy, Climate Innovation, and Precision Agriculture.
@@ -54,7 +54,7 @@ export default function Hero() {
                 href="/CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-2 border-gray-300 hover:border-green-600 hover:text-green-600 px-8 py-4 rounded-xl transition"
+                className="border-2 border-gray-300 dark:border-gray-700 hover:border-green-600 hover:text-green-600 dark:text-white px-8 py-4 rounded-xl transition"
               >
                 Download CV
               </a>
@@ -62,26 +62,31 @@ export default function Hero() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-6 text-3xl mt-12">
+            <div className="flex gap-6 text-3xl mt-12 text-gray-800 dark:text-white">
 
               <a
                 href="https://github.com/NkundimanaAugustin"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-green-600 transition"
               >
-                <FaGithub className="hover:text-green-600 transition" />
+                <FaGithub />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/nkundimana-augustin/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-green-600 transition"
               >
-                <FaLinkedin className="hover:text-green-600 transition" />
+                <FaLinkedin />
               </a>
 
-              <a href="mailto:augunkundimana@gmail.com">
-                <FaEnvelope className="hover:text-green-600 transition" />
+              <a
+                href="mailto:augunkundimana@gmail.com"
+                className="hover:text-green-600 transition"
+              >
+                <FaEnvelope />
               </a>
 
             </div>
@@ -101,7 +106,7 @@ export default function Hero() {
                 width={450}
                 height={450}
                 priority
-                className="relative rounded-full object-cover border-8 border-white shadow-2xl"
+                className="relative rounded-full object-cover border-8 border-white dark:border-gray-800 shadow-2xl"
               />
 
             </div>

@@ -60,32 +60,31 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-28 bg-white"
+      className="py-28 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-
         <div className="text-center mb-20">
 
           <p className="uppercase tracking-widest text-green-600 font-semibold">
             Experience
           </p>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mt-4">
             Professional Journey
           </h2>
 
-          <p className="text-gray-600 mt-6 max-w-3xl mx-auto">
-            My journey combines Artificial Intelligence, Agricultural
-            Engineering, entrepreneurship, leadership, and innovation to
-            create impactful technologies that transform agriculture in Africa.
+          <p className="text-gray-600 dark:text-gray-300 mt-6 max-w-3xl mx-auto leading-8">
+            My journey combines Artificial Intelligence,
+            Agricultural Engineering, entrepreneurship,
+            leadership, and innovation to create impactful
+            technologies that transform agriculture in Africa.
           </p>
 
         </div>
 
         {/* Timeline */}
-
         <div className="relative border-l-4 border-green-600 ml-6">
 
           {experiences.map((exp, index) => {
@@ -98,31 +97,27 @@ export default function Experience() {
               >
 
                 {/* Timeline Icon */}
-
-                <div className="absolute -left-16 top-1 w-12 h-12 rounded-full bg-green-600 flex items-center justify-center">
-
+                <div className="absolute -left-16 top-1 flex h-12 w-12 items-center justify-center rounded-full bg-green-600 shadow-lg">
                   <Icon
                     size={22}
                     className="text-white"
                   />
-
                 </div>
 
                 {/* Content */}
-
-                <span className="text-green-600 font-bold">
+                <span className="font-bold text-green-600">
                   {exp.year}
                 </span>
 
-                <h3 className="text-2xl font-bold mt-2">
+                <h3 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
                   {exp.title}
                 </h3>
 
-                <h4 className="text-lg text-green-700 font-semibold mt-1">
+                <h4 className="mt-1 text-lg font-semibold text-green-700 dark:text-green-400">
                   {exp.company}
                 </h4>
 
-                <p className="text-gray-600 mt-4 leading-7">
+                <p className="mt-4 leading-7 text-gray-600 dark:text-gray-300">
                   {exp.description}
                 </p>
 

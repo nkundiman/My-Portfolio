@@ -10,23 +10,27 @@ export default function SectionTitle({
   description,
 }: Props) {
   return (
-    <div className="text-center mb-20">
+    <div className="mb-20 text-center">
 
-      <span className="inline-block px-4 py-2 rounded-full bg-green-100 text-green-700 font-semibold uppercase tracking-widest text-sm">
+      {/* Subtitle */}
+      <span className="inline-block rounded-full bg-green-100 dark:bg-green-900 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-green-700 dark:text-green-300">
         {subtitle}
       </span>
 
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mt-6 text-gray-900">
+      {/* Title */}
+      <h2 className="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         {title}
       </h2>
 
+      {/* Description */}
       {description && (
-        <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-gray-600">
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300">
           {description}
         </p>
       )}
 
-      <div className="w-24 h-1 bg-green-600 mx-auto rounded-full mt-8"></div>
+      {/* Decorative Line */}
+      <div className="mx-auto mt-8 h-1 w-24 rounded-full bg-green-600 dark:bg-green-400"></div>
 
     </div>
   );

@@ -49,7 +49,10 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-gray-50">
+    <section
+      id="skills"
+      className="py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
         <SectionTitle
@@ -58,14 +61,15 @@ export default function Skills() {
           description="A combination of Artificial Intelligence, Agricultural Engineering, Software Development, and Leadership that enables me to build impactful technologies for Africa."
         />
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid gap-12 lg:grid-cols-2">
 
           {skillCategories.map((category) => (
             <div
               key={category.category}
-              className="bg-white rounded-3xl shadow-lg p-8"
+              className="rounded-3xl bg-white dark:bg-gray-800 p-8 shadow-lg transition duration-300 hover:shadow-2xl"
             >
-              <h3 className="text-2xl font-bold text-green-600 mb-8">
+
+              <h3 className="mb-8 text-2xl font-bold text-green-600 dark:text-green-400">
                 {category.category}
               </h3>
 
@@ -74,21 +78,25 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <div key={skill.name}>
 
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold">
+                    <div className="mb-2 flex items-center justify-between">
+
+                      <span className="font-semibold text-gray-900 dark:text-white">
                         {skill.name}
                       </span>
 
-                      <span className="text-green-600 font-semibold">
+                      <span className="font-semibold text-green-600 dark:text-green-400">
                         {skill.level}%
                       </span>
+
                     </div>
 
-                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
+
                       <div
-                        className="h-3 bg-green-600 rounded-full"
+                        className="h-3 rounded-full bg-green-600 dark:bg-green-500 transition-all duration-500"
                         style={{ width: `${skill.level}%` }}
                       />
+
                     </div>
 
                   </div>

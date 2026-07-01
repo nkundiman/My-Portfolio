@@ -60,7 +60,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-gray-50">
+    <section
+      id="projects"
+      className="py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
         <SectionTitle
@@ -73,32 +76,35 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+              className="rounded-3xl bg-white dark:bg-gray-800 shadow-lg p-8 transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+
+              <span className="inline-block rounded-full bg-green-100 dark:bg-green-900 px-3 py-1 text-sm font-semibold text-green-700 dark:text-green-300">
                 {project.status}
               </span>
 
-              <h3 className="text-2xl font-bold mt-5">
+              <h3 className="mt-5 text-2xl font-bold text-gray-900 dark:text-white">
                 {project.title}
               </h3>
 
-              <p className="text-green-600 font-medium mt-2">
+              <p className="mt-2 font-medium text-green-600 dark:text-green-400">
                 {project.category}
               </p>
 
-              <p className="text-gray-600 mt-5 leading-7">
+              <p className="mt-5 leading-7 text-gray-600 dark:text-gray-300">
                 {project.description}
               </p>
 
               <div className="mt-6">
-                <p className="text-sm text-gray-500">
+
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Technologies
                 </p>
 
-                <p className="font-semibold mt-2">
+                <p className="mt-2 font-semibold text-gray-900 dark:text-white">
                   {project.tech}
                 </p>
+
               </div>
 
               {project.website && (
@@ -106,13 +112,14 @@ export default function Projects() {
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-8 text-green-600 font-semibold hover:text-green-700"
+                  className="mt-8 inline-flex items-center gap-2 font-semibold text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition"
                 >
                   <Globe size={18} />
                   Visit Project
                   <ArrowUpRight size={18} />
                 </a>
               )}
+
             </div>
           ))}
 

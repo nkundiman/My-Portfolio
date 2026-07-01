@@ -60,59 +60,68 @@ export default function Awards() {
   return (
     <section
       id="awards"
-      className="bg-gray-50 py-24"
+      className="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
         <div className="text-center mb-16">
+
           <p className="text-green-600 uppercase tracking-widest font-semibold">
             Recognition
           </p>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="mt-4 text-5xl font-bold text-gray-900 dark:text-white">
             Awards & Leadership Recognition
           </h2>
 
-          <p className="text-gray-600 mt-6 max-w-3xl mx-auto">
+          <p className="mt-6 max-w-3xl mx-auto text-gray-600 dark:text-gray-300 leading-8">
             My journey has been shaped by leadership, research,
             entrepreneurship, and innovation dedicated to advancing
             Artificial Intelligence and sustainable agriculture across Africa.
           </p>
+
         </div>
 
         {/* Award Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
           {awards.map((award, index) => {
             const Icon = award.icon;
 
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 p-8"
+                className="rounded-3xl bg-white dark:bg-gray-900 border border-transparent dark:border-gray-800 p-8 shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-6">
-                  <Icon className="text-green-600" size={28} />
+
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+                  <Icon
+                    className="text-green-600 dark:text-green-400"
+                    size={28}
+                  />
                 </div>
 
-                <span className="text-green-600 font-semibold">
+                <span className="font-semibold text-green-600 dark:text-green-400">
                   {award.year}
                 </span>
 
-                <h3 className="text-2xl font-bold mt-3">
+                <h3 className="mt-3 text-2xl font-bold text-gray-900 dark:text-white">
                   {award.title}
                 </h3>
 
-                <p className="text-green-700 font-medium mt-2">
+                <p className="mt-2 font-medium text-green-700 dark:text-green-400">
                   {award.organization}
                 </p>
 
-                <p className="text-gray-600 mt-5 leading-7">
+                <p className="mt-5 leading-7 text-gray-600 dark:text-gray-300">
                   {award.description}
                 </p>
+
               </div>
             );
           })}
+
         </div>
 
       </div>
