@@ -7,11 +7,9 @@ import DarkModeToggle from "./DarkModeToggle";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Research", href: "#research" },
-  { name: "Companies", href: "#companies" },
-  { name: "Projects", href: "#projects" },
+  { name: "Book", href: "#book" },
+  { name: "Sponsorship", href: "#sponsorship" },
   { name: "Experience", href: "#experience" },
-  { name: "Leadership", href: "#leadership" },
   { name: "Awards", href: "#awards" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
@@ -21,24 +19,24 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-800 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/90">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
         <a
           href="#home"
-          className="text-2xl font-bold text-green-600"
+          className="text-3xl font-bold text-green-600"
         >
           Augustin
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-700 dark:text-gray-200 hover:text-green-600 transition"
+              className="font-medium text-gray-700 transition hover:text-green-600 dark:text-gray-200"
             >
               {link.name}
             </a>
@@ -47,32 +45,27 @@ export default function Navbar() {
 
         {/* Right Side */}
         <div className="flex items-center gap-4">
-
-          {/* Dark Mode Button */}
           <DarkModeToggle />
 
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-gray-700 dark:text-white"
             onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-gray-700 dark:text-white"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
-
         </div>
-
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <nav className="lg:hidden bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col px-6 py-4 space-y-4">
+        <nav className="lg:hidden border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
+          <div className="flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-gray-700 dark:text-gray-200 hover:text-green-600 transition"
+                className="text-lg text-gray-700 transition hover:text-green-600 dark:text-gray-200"
               >
                 {link.name}
               </a>

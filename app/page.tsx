@@ -3,7 +3,6 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Book from "../components/Book";
 import Sponsorship from "../components/Sponsorship";
-import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Awards from "../components/Awards";
 import Skills from "../components/Skills";
@@ -21,8 +20,6 @@ export default function Home() {
       <Book />
 
       <Sponsorship />
-
-      <Projects />
 
       <Experience />
 
