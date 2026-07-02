@@ -1,42 +1,51 @@
 import Image from "next/image";
 import {
+  FaArrowRight,
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaArrowRight,
 } from "react-icons/fa";
+import {
+  Brain,
+  Leaf,
+  Tractor,
+  Award,
+} from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-white via-green-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black flex items-center transition-colors duration-300"
+      className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-950 dark:via-black dark:to-gray-900 transition-colors duration-500"
     >
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      {/* Background Blur */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-green-500/20 rounded-full blur-3xl"></div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-green-300/10 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto px-6 pt-36 pb-24">
+
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
           {/* LEFT SIDE */}
           <div>
 
-            <p className="text-green-600 font-semibold text-lg">
-              Hello, I'm
-            </p>
+            <span className="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-5 py-2 text-green-700 dark:text-green-300 font-semibold">
+              🌍 AI • Agriculture • Climate Innovation
+            </span>
 
-            <h1 className="text-6xl font-extrabold mt-4 leading-tight text-gray-900 dark:text-white">
-              NKUNDIMANA
-              <br />
-              AUGUSTIN
+            <h1 className="mt-8 text-5xl md:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white">
+              Transforming African Agriculture
+              <span className="text-green-600">
+                {" "}Through Artificial Intelligence
+              </span>
             </h1>
 
-            <h2 className="text-2xl mt-6 text-gray-600 dark:text-gray-300">
-              Agricultural Engineer • AI Researcher • Founder of AGRIC AI
-            </h2>
-
-            <p className="text-lg mt-8 leading-8 max-w-xl text-gray-600 dark:text-gray-400">
-              Building intelligent technologies that empower African farmers
-              through Artificial Intelligence, Digital Agriculture,
-              Renewable Energy, Climate Innovation, and Precision Agriculture.
+            <p className="mt-8 text-xl text-gray-600 dark:text-gray-300 leading-9 max-w-2xl">
+              Agricultural Engineer, Artificial Intelligence Researcher,
+              Entrepreneur, and Mandela Washington Fellow building intelligent
+              technologies that improve food security, precision agriculture,
+              climate resilience, and environmental sustainability across Africa.
             </p>
 
             {/* Buttons */}
@@ -46,65 +55,136 @@ export default function Hero() {
                 href="#projects"
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl flex items-center gap-3 transition"
               >
-                View My Projects
+                Explore My Work
                 <FaArrowRight />
               </a>
 
               <a
-                href="/CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-gray-300 dark:border-gray-700 hover:border-green-600 hover:text-green-600 dark:text-white px-8 py-4 rounded-xl transition"
+                href="#contact"
+                className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-xl transition"
               >
-                Download CV
+                Contact Me
               </a>
 
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-6 text-3xl mt-12 text-gray-800 dark:text-white">
+            <div className="flex gap-6 mt-10 text-3xl text-gray-700 dark:text-gray-300">
 
               <a
                 href="https://github.com/NkundimanaAugustin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-600 transition"
               >
-                <FaGithub />
+                <FaGithub className="hover:text-green-600 transition" />
               </a>
 
               <a
-                href="https://www.linkedin.com/in/nkundimana-augustin/"
+                href="https://linkedin.com/in/nkundimana-augustin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-600 transition"
               >
-                <FaLinkedin />
+                <FaLinkedin className="hover:text-green-600 transition" />
               </a>
 
-              <a
-                href="mailto:augunkundimana@gmail.com"
-                className="hover:text-green-600 transition"
-              >
-                <FaEnvelope />
+              <a href="mailto:augunkundimana@gmail.com">
+                <FaEnvelope className="hover:text-green-600 transition" />
               </a>
+
+            </div>
+
+            {/* Statistics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+
+              <div>
+                <h2 className="text-4xl font-bold text-green-600">10+</h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Research Projects
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-4xl font-bold text-green-600">2</h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Companies Founded
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-4xl font-bold text-green-600">2025</h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Mandela Fellow
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-4xl font-bold text-green-600">$11000</h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Innovation Awards
+                </p>
+              </div>
 
             </div>
 
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex justify-center">
+          <div className="relative flex justify-center">
 
+            {/* Floating Card */}
+            <div className="absolute -top-6 left-0 bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-5 border dark:border-gray-700">
+              <Brain className="text-green-600 mb-2" size={34} />
+              <p className="font-bold dark:text-white">
+                Artificial Intelligence
+              </p>
+              <span className="text-sm text-gray-500">
+                Computer Vision
+              </span>
+            </div>
+
+            {/* Floating Card */}
+            <div className="absolute bottom-10 -left-10 bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-5 border dark:border-gray-700">
+              <Leaf className="text-green-600 mb-2" size={34} />
+              <p className="font-bold dark:text-white">
+                Climate Innovation
+              </p>
+              <span className="text-sm text-gray-500">
+                Sustainability
+              </span>
+            </div>
+
+            {/* Floating Card */}
+            <div className="absolute top-24 -right-6 bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-5 border dark:border-gray-700">
+              <Tractor className="text-green-600 mb-2" size={34} />
+              <p className="font-bold dark:text-white">
+                Smart Farming
+              </p>
+              <span className="text-sm text-gray-500">
+                Precision Agriculture
+              </span>
+            </div>
+
+            {/* Floating Card */}
+            <div className="absolute bottom-0 right-0 bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-5 border dark:border-gray-700">
+              <Award className="text-green-600 mb-2" size={34} />
+              <p className="font-bold dark:text-white">
+                Mandela Fellow
+              </p>
+              <span className="text-sm text-gray-500">
+                Leadership
+              </span>
+            </div>
+
+            {/* Profile Image */}
             <div className="relative">
 
-              <div className="absolute inset-0 rounded-full bg-green-500 blur-3xl opacity-20 scale-110"></div>
+              <div className="absolute inset-0 rounded-full bg-green-500 blur-3xl opacity-30 scale-110"></div>
 
               <Image
                 src="/profile.jpg"
                 alt="Nkundimana Augustin"
-                width={450}
-                height={450}
+                width={520}
+                height={520}
                 priority
                 className="relative rounded-full object-cover border-8 border-white dark:border-gray-800 shadow-2xl"
               />

@@ -1,119 +1,270 @@
 import Image from "next/image";
-import { Brain, Leaf, Briefcase, Award } from "lucide-react";
+import {
+  Brain,
+  Leaf,
+ Globe,
+  Building2,
+  Award,
+  ArrowRight,
+} from "lucide-react";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-white dark:bg-gray-950 transition-colors duration-300"
+      className="relative overflow-hidden py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,#16a34a_1px,transparent_1px)] [background-size:35px_35px]" />
 
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <p className="text-green-600 font-semibold uppercase tracking-wider">
-            About Me
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+
+        <div className="text-center mb-20">
+
+          <span className="inline-flex px-5 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-semibold">
+            My Story & Mission
+          </span>
+
+          <h2 className="text-5xl md:text-6xl font-extrabold mt-8 text-gray-900 dark:text-white">
+            About Augustin
+          </h2>
+
+          <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+            Agricultural Engineer, Artificial Intelligence Researcher,
+            Entrepreneur, and Climate Innovation Leader committed to building
+            intelligent technologies that improve agriculture, food security,
+            and environmental sustainability across Africa.
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold text-gray-900 dark:text-white">
-            Passionate About AI & Sustainable Agriculture
-          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Main Grid */}
 
-          {/* Left Side */}
-          <div className="flex justify-center">
-            <Image
-              src="/profile.jpg"
-              alt="Nkundimana Augustin"
-              width={420}
-              height={420}
-              className="rounded-3xl object-cover shadow-2xl border-4 border-white dark:border-gray-800"
-            />
-          </div>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-          {/* Right Side */}
+          {/* Left */}
+
           <div>
 
-            <h3 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-              Who I Am
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-500 via-emerald-500 to-blue-500 p-1 shadow-2xl">
+
+              <div className="bg-white dark:bg-gray-900 rounded-3xl p-8">
+
+                <Image
+                  src="/profile.jpg"
+                  alt="Nkundimana Augustin"
+                  width={500}
+                  height={600}
+                  className="rounded-3xl object-cover w-full"
+                />
+
+                {/* Statistics */}
+
+                <div className="grid grid-cols-3 gap-4 mt-8">
+
+                  <div className="text-center bg-gray-100 dark:bg-gray-800 rounded-2xl p-4">
+                    <h3 className="text-3xl font-bold text-green-600">
+                      10+
+                    </h3>
+
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      AI Projects
+                    </p>
+                  </div>
+
+                  <div className="text-center bg-gray-100 dark:bg-gray-800 rounded-2xl p-4">
+                    <h3 className="text-3xl font-bold text-green-600">
+                      2
+                    </h3>
+
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Companies
+                    </p>
+                  </div>
+
+                  <div className="text-center bg-gray-100 dark:bg-gray-800 rounded-2xl p-4">
+                    <h3 className="text-3xl font-bold text-green-600">
+                      2025
+                    </h3>
+
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Mandela Fellow
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Right */}
+
+          <div>
+
+            <span className="inline-flex px-4 py-2 rounded-full bg-orange-100 dark:bg-orange-900/20 text-orange-600">
+              My Journey
+            </span>
+
+            <h3 className="text-4xl font-bold mt-6 text-gray-900 dark:text-white">
+              The Journey of Innovation
             </h3>
 
-            <p className="mb-6 leading-8 text-gray-600 dark:text-gray-300">
-              I am <strong className="text-gray-900 dark:text-white">Nkundimana Augustin</strong>,
-              an Agricultural Engineer, AI Researcher, and Entrepreneur dedicated
-              to transforming agriculture across Africa through Artificial
-              Intelligence, Machine Learning, Digital Agriculture, and
-              Climate-Smart Innovation.
+            <p className="mt-8 leading-8 text-lg text-gray-600 dark:text-gray-300">
+              My journey began with a passion for Agricultural Engineering and
+              the desire to solve real-world farming challenges using
+              Artificial Intelligence. I believe technology has the power to
+              transform agriculture and improve millions of lives.
             </p>
 
-            <p className="mb-8 leading-8 text-gray-600 dark:text-gray-300">
-              I founded{" "}
-              <strong className="text-green-600">AGRIC AI</strong> and{" "}
-              <strong className="text-green-600">AGRILYTHOS Africa</strong> to
-              develop technologies that improve food security, increase
-              agricultural productivity, and empower farmers with intelligent
-              digital solutions.
+            <p className="mt-6 leading-8 text-lg text-gray-600 dark:text-gray-300">
+              As the Founder of <strong className="text-green-600">AGRIC AI</strong>
+              {" "}and{" "}
+              <strong className="text-green-600">AGRILYTHOS Africa</strong>,
+              I develop intelligent solutions for crop disease detection,
+              precision agriculture, climate-smart farming, renewable energy,
+              and digital agriculture.
             </p>
 
-            {/* Mission */}
-            <div className="mb-6">
-              <h4 className="text-xl font-semibold text-green-600">
-                Mission
-              </h4>
+            <p className="mt-6 leading-8 text-lg text-gray-600 dark:text-gray-300">
+              My mission is to empower African farmers through Artificial
+              Intelligence, Machine Learning, Computer Vision, GIS,
+              environmental sustainability, and innovative research.
+            </p>
 
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                To empower African farmers through Artificial Intelligence,
-                Digital Agriculture, Renewable Energy, and innovative research.
-              </p>
+            {/* Tags */}
+
+            <div className="flex flex-wrap gap-3 mt-10">
+
+              {[
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Computer Vision",
+                "Precision Agriculture",
+                "Climate Innovation",
+                "Food Security",
+                "Renewable Energy",
+                "Digital Agriculture",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300"
+                >
+                  {item}
+                </span>
+              ))}
+
             </div>
 
-            {/* Vision */}
-            <div className="mb-10">
-              <h4 className="text-xl font-semibold text-green-600">
-                Vision
-              </h4>
+          </div>
 
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                To become one of Africa's leading AI researchers developing
-                intelligent technologies that improve food security and
-                sustainable agriculture.
-              </p>
-            </div>
+        </div>
 
-            {/* Highlights */}
-            <div className="grid grid-cols-2 gap-6">
+        {/* Leadership */}
 
-              <div className="flex items-center gap-3 rounded-xl bg-gray-50 dark:bg-gray-900 p-4 shadow-sm">
-                <Brain className="text-green-600" size={28} />
-                <span className="font-medium text-gray-900 dark:text-white">
-                  AI Researcher
-                </span>
-              </div>
+        <div className="mt-28">
 
-              <div className="flex items-center gap-3 rounded-xl bg-gray-50 dark:bg-gray-900 p-4 shadow-sm">
-                <Leaf className="text-green-600" size={28} />
-                <span className="font-medium text-gray-900 dark:text-white">
-                  Agricultural Engineer
-                </span>
-              </div>
+          <div className="text-center mb-16">
 
-              <div className="flex items-center gap-3 rounded-xl bg-gray-50 dark:bg-gray-900 p-4 shadow-sm">
-                <Briefcase className="text-green-600" size={28} />
-                <span className="font-medium text-gray-900 dark:text-white">
-                  Founder & CEO
-                </span>
-              </div>
+            <span className="text-green-600 uppercase tracking-widest font-semibold">
+              Leadership Journey
+            </span>
 
-              <div className="flex items-center gap-3 rounded-xl bg-gray-50 dark:bg-gray-900 p-4 shadow-sm">
-                <Award className="text-green-600" size={28} />
-                <span className="font-medium text-gray-900 dark:text-white">
-                  Mandela Washington Fellow
-                </span>
-              </div>
+            <h2 className="text-5xl font-bold mt-4 text-gray-900 dark:text-white">
+              Building AI for African Agriculture
+            </h2>
 
-            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {[
+              {
+                title: "AGRIC AI",
+                role: "Founder & CEO",
+                icon: Brain,
+                text:
+                  "Developing AI solutions for crop disease detection, precision agriculture, and intelligent farming.",
+              },
+              {
+                title: "AGRILYTHOS Africa",
+                role: "Founder",
+                icon: Leaf,
+                text:
+                  "Promoting climate-smart agriculture, renewable energy, and sustainable innovation.",
+              },
+              {
+                title: "YALI Rwanda",
+                role: "Executive Committee",
+                icon: Globe,
+                text:
+                  "Supporting entrepreneurship, startups, innovation, and leadership development.",
+              },
+              {
+                title: "Mandela Washington Fellowship",
+                role: "Leadership Fellow",
+                icon: Award,
+                text:
+                  "Selected among Africa's emerging young leaders by the U.S. Department of State.",
+              },
+            ].map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="rounded-3xl bg-white dark:bg-gray-900 shadow-xl p-8 hover:-translate-y-2 transition"
+                >
+                  <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
+                    <Icon className="text-green-600" size={30} />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-green-600 font-semibold mt-2">
+                    {item.role}
+                  </p>
+
+                  <p className="mt-5 leading-7 text-gray-600 dark:text-gray-300">
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
+
+          </div>
+
+        </div>
+
+        {/* Vision */}
+
+        <div className="mt-28">
+
+          <div className="rounded-3xl bg-gradient-to-r from-green-600 via-emerald-500 to-blue-500 p-14 text-center text-white">
+
+            <Building2 size={50} className="mx-auto mb-6" />
+
+            <h2 className="text-5xl font-bold">
+              My Vision
+            </h2>
+
+            <p className="max-w-4xl mx-auto mt-8 text-xl leading-10">
+              "To become one of Africa's leading Artificial Intelligence
+              researchers developing intelligent technologies that transform
+              agriculture, strengthen food security, protect the environment,
+              and empower millions of farmers through innovation."
+            </p>
+
+            <button className="mt-10 inline-flex items-center gap-3 bg-white text-green-700 px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+              View My Research
+              <ArrowRight size={20} />
+            </button>
 
           </div>
 
