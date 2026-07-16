@@ -4,7 +4,12 @@ import { useEffect } from "react";
 
 export default function TestConnection() {
   useEffect(() => {
-    const testConnection = async () => {
+    // Run only in development mode
+    if (process.env.NODE_ENV !== "development") {
+      return;
+    }
+
+    async function testConnection() {
       try {
         const response = await fetch("/api/contact", {
           method: "POST",
@@ -21,8 +26,6 @@ export default function TestConnection() {
 
         const data = await response.json();
 
-        console.log("Status:", response.status);
-
         if (response.ok) {
           console.log("✅ API Connected");
           console.log(data);
@@ -34,7 +37,7 @@ export default function TestConnection() {
         console.error("❌ Network Error");
         console.error(error);
       }
-    };
+    }
 
     testConnection();
   }, []);

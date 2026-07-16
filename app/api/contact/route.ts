@@ -10,31 +10,21 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const {
-      name,
-      email,
-      subject,
-      message,
-    } = body;
+    const { name, email, subject, message } = body;
 
-    // Validate request
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         {
           success: false,
           error: "All fields are required.",
         },
-        {
-          status: 400,
-        }
+        { status: 400 }
       );
     }
 
-    // Generate Ticket Number
     const ticket = `AGRIC-${Date.now()}`;
 
-    // Save message in Supabase
-    const { data, error } = await supabaseServer
+    const { error } = await supabaseServer
       .from("contacts")
       .insert([
         {
@@ -45,12 +35,10 @@ export async function POST(request: Request) {
           ticket,
           status: "New",
         },
-      ])
-      .select()
-      .single();
+      ]);
 
     if (error) {
-      console.error("Supabase Error:", error);
+      console.error(error);
 
       return NextResponse.json(
         {
@@ -63,54 +51,29 @@ export async function POST(request: Request) {
       );
     }
 
-    // Send confirmation email
-    const emailResponse = await resend.emails.send({
-      from: "AGRIC AI <onboarding@resend.dev>",
-
-      // After verifying your domain change this to:
-      // from: "AGRIC AI <hello@agric-ai.com>",
-
-      to: email,
-
-      subject: `✅ We've received your message`,
-
-      react: ContactConfirmation({
-        name,
-        subject,
-        message,
-        ticket,
-      }),
-    });
-
-    if (emailResponse.error) {
-      console.error("Resend Error:", emailResponse.error);
-
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Message saved but confirmation email failed.",
-        },
-        {
-          status: 500,
-        }
-      );
+    try {
+      await resend.emails.send({
+        from: "AGRIC AI <onboarding@resend.dev>",
+        to: email,
+        subject: "We've received your message",
+        react: ContactConfirmation({
+          name,
+          subject,
+          message,
+          ticket,
+        }),
+      });
+    } catch (emailError) {
+      console.error("Email Error:", emailError);
     }
 
-    console.log("Message Saved:", data);
-
-    return NextResponse.json(
-      {
-        success: true,
-        ticket,
-        message:
-          "Thank you! Your message has been received successfully.",
-      },
-      {
-        status: 200,
-      }
-    );
+    return NextResponse.json({
+      success: true,
+      ticket,
+      message: "Your message has been received successfully.",
+    });
   } catch (error) {
-    console.error("API Error:", error);
+    console.error(error);
 
     return NextResponse.json(
       {
