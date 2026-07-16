@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "./DarkModeToggle";
 
@@ -30,7 +31,7 @@ export default function Navbar() {
           Augustin
         </a>
 
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -41,25 +42,37 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+
+          {/* Admin Login Button */}
+          <Link
+            href="/login"
+            className="rounded-lg bg-green-600 px-5 py-2 font-semibold text-white transition hover:bg-green-700"
+          >
+            Admin
+          </Link>
         </nav>
 
         {/* Right Side */}
         <div className="flex items-center gap-4">
+
           <DarkModeToggle />
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-gray-700 dark:text-white"
           >
             {isOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
+
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="lg:hidden border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
-          <div className="flex flex-col gap-4 px-6 py-6">
+          <div className="flex flex-col gap-5 px-6 py-6">
+
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -70,6 +83,16 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+
+            {/* Admin Login */}
+            <Link
+              href="/login"
+              onClick={() => setIsOpen(false)}
+              className="rounded-lg bg-green-600 px-4 py-3 text-center font-semibold text-white transition hover:bg-green-700"
+            >
+              Admin Login
+            </Link>
+
           </div>
         </nav>
       )}

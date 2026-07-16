@@ -7,6 +7,7 @@ import Experience from "../components/Experience";
 import Awards from "../components/Awards";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
+import TestConnection from "../components/TestConnection";
 
 export default function Home() {
   return (
@@ -28,6 +29,9 @@ export default function Home() {
       <Skills />
 
       <Contact />
+
+      {/* Test Supabase Connection */}
+      <TestConnection />
     </main>
   );
 }
